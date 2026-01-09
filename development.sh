@@ -1,29 +1,36 @@
 #!/bin/bash
-
 echo "Running development tools installation..."
 
 # Browser
-yay -S --noconfirm vivaldi chromium
+sudo pacman -S --noconfirm vivaldi firefox
 
 # Version Control
-yay -S --noconfirm git github-cli 
+sudo pacman -S --noconfirm git github-cli github-desktop
 
 # Editors
-yay -S --noconfirm neovim visual-studio-code-bin
+sudo pacman -S --noconfirm neovim code
+sudo yay -S --noconfirm visual-studio-code-bin
 
 # Languages
-yay -S --noconfirm python python-pip ruby rubygems ruby-bundler nodejs npm yarn
+sudo pacman -S --noconfirm python python-pip nodejs npm yarn
 
 # Containers
-yay -S --noconfirm docker docker-compose
+sudo pacman -S --noconfirm docker docker-compose
 
 # Databases
-yay -S --noconfirm sqlite
-
-# Utilities
-yay -S --noconfirm postman-bin
+sudo pacman -S --noconfirm sqlite
 
 # Terminal
-yay -S --noconfirm zsh oh-my-zsh-git
+sudo pacman -S --noconfirm zsh alacritty fzf zoxide zsh-syntax-highlighting zsh-autosuggestions
+# oh-my-zsh
+echo "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+echo "Installing powerlevel10k..."
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# Fonts
+sudo pacman -S --noconfirm ttf-meslo-nerd
+sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd
 
 echo "Development setup complete!"
+echo "Don't forget to chsh -s /usr/bin/zsh"
