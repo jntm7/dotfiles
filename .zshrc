@@ -30,20 +30,22 @@ export CHROME_EXECUTABLE=/usr/bin/vivaldi
 # Aliases
 alias zshrc="nvim ~/.zshrc"
 alias github="cd Documents/GitHub"
-alias wo="pomodoro 'work'"
-alias br="pomodoro 'break'"
+alias pomostudy="pomodoro 'study'"
+alias pomowork="pomodoro 'work'"
+alias pomobreak="pomodoro 'break'"
 
 # Pomodoro Timer
 declare -A pomo_options
+pomo_options["study"]="30"
 pomo_options["work"]="45"
 pomo_options["break"]="10"
 
 pomodoro () {
   if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
-  val=$1
-  echo $val | lolcat
-  timer ${pomo_options["$val"]}m
-  spd-say "'$val' session done"
+    val=$1
+    echo $val | lolcat
+    timer ${pomo_options["$val"]}m
+    notify-send "Pomodoro" "'$val' session done"
   fi
 }
 
