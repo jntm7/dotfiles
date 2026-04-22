@@ -28,20 +28,24 @@
         },
         {
             "type": "os",
-            "key": "  {#92}  {#36}OS",
+            "key": "  {#92}  {#36}os",
             "format": "{#36}{2}"
         },
         {
             "type": "kernel",
-            "key": "  {#92}  {#36}KERNEL",
+            "key": "  {#92}  {#36}kernel",
             "format": "{#36}{2}"
         },
         {
             "type": "shell",
-            "key": "  {#92}  {#36}SHELL",
+            "key": "  {#92}  {#36}shell",
             "format": "{#36}{6} {4}"
         },
-
+        {
+            "type": "command",
+            "key": "  {#92}󰏖  {#36}packages",
+            "text": "pacman_count=$(pacman -Qq 2>/dev/null | wc -l); flatpak_count=$(flatpak list 2>/dev/null | wc -l) || flatpak_count=0; echo -e \"\\u001b[36m${pacman_count} (pacman) / ${flatpak_count} (flatpak)\""
+        },
         {
             "type": "custom",
             "format": "{#36}└────────────────────────────────────────────────────────────────┘"
@@ -52,27 +56,27 @@
         }, 
         {
             "type": "de",
-            "key": "  {#92}  {#36}DE",
+            "key": "  {#92}  {#36}de",
             "format": "{#36}{2} {3}"
         },
         {
             "type": "wm",
-            "key": "  {#92}󱂬  {#36}WM",
+            "key": "  {#92}󱂬  {#36}wm",
             "format": "{#36}{2} ({3})"
         },
         {
             "type": "wmtheme",
-            "key": "  {#92}󰉼  {#36}THEME",
+            "key": "  {#92}󰉼  {#36}theme",
             "format": "{#36}{1}"
         },
         {
             "type": "icons",
-            "key": "  {#92}󰀻  {#36}ICONS",
+            "key": "  {#92}󰀻  {#36}icons",
             "format": "{#36}{1}"
         },
         {
             "type": "display",
-            "key": "  {#92}󰍹  {#36}DISPLAY",
+            "key": "  {#92}󰍹  {#36}display",
             "format": "{#36}{6} ({1}x{2} @ {3}Hz)"
         },
         {
@@ -85,31 +89,31 @@
         },
         {
             "type": "board",
-            "key": "  {#92}  {#36}MOBO",
+            "key": "  {#92}  {#36}mobo",
             // had to add ASUS manually for my motherboard
             "format": "{#36}ASUS {1}"
         },
         {
             "type": "cpu",
-            "key": "  {#92}  {#36}CPU",
+            "key": "  {#92}  {#36}cpu",
             "format": "{#36}{1}"
         },
         {
             "type": "gpu",
-            "key": "  {#92}󰢮  {#36}GPU",
+            "key": "  {#92}󰢮  {#36}gpu",
             "hideType": "integrated",
             "format": "{#36}{2}"
         },
         {
             "type": "memory",
-            "key": "  {#92}󰘚  {#36}RAM",
+            "key": "  {#92}󰘚  {#36}ram",
             "format": "{#36}{1} / {2} ({3})"
         },
-        {
-            "type": "swap",
-            "key": "  {#92}󰘚  {#36}SWAP",
-            "format": "{#36}{1} / {2} ({3})"
-        },
+	{
+	    "type": "swap",
+	    "key": "  {#92}󰘚  {#36}swap",
+	    "format":  "{#36}{1} / {2} ({3})"
+	},
         {
             "type": "custom",
             "format": "{#36}└────────────────────────────────────────────────────────────────┘"
@@ -120,19 +124,19 @@
         },
         {
             "type": "disk",
-            "key": "  {#92}󰋊  {#36}/",
+            "key": "  {#92}󰋊  {#36}root",
             "folders": ["/"],
             "format": "{#36}{1} / {2} {#36}({3}) {#36}{9}"
         },
         {
             "type": "disk",
-            "key": "  {#92}󰋊  {#36}/mnt/wd-nvme",
+            "key": "  {#92}󰋊  {#36}wd-nvme",
             "folders": ["/mnt/wd-nvme"],
             "format": "{#36}{1} / {2} {#36}({3}) {#36}{9}"
         },
         {
             "type": "disk",
-            "key": "  {#92}󰋊  {#36}/mnt/ct1000",
+            "key": "  {#92}󰋊  {#36}ct1000",
             "folders": ["/mnt/ct1000"],
             "format": "{#36}{1} / {2} {#36}({3}) {#36}{9}"
         },     
@@ -146,7 +150,7 @@
         },
         {
             "type": "uptime",
-            "key": "  {#92}  {#36}Uptime",
+            "key": "  {#92}  {#36}uptime",
             "format": "{#36}{1} days, {2} hours, {3} mins"
         },
         {
