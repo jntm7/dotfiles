@@ -1,0 +1,158 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.config/fastfetch/cachyos_logo.png",
+        "height": 20,
+        "color": {
+            "1": "cyan"
+        },
+        "position": "left",
+        "padding": {
+            "top": 0,
+            "left": 2,
+            "right": 4
+        }
+    },
+    "display": {
+        "separator": "  ",
+        "key": {
+            "width": 26
+        }
+    },
+    "modules": [
+	"break",
+	"break",
+        {
+            "type": "custom",
+            "format": "{#36}┌─────────────────────────── {#92}Software{#36} ───────────────────────────┐"
+        },
+        {
+            "type": "os",
+            "key": "  {#92}  {#36}OS",
+            "format": "{#36}{2}"
+        },
+        {
+            "type": "kernel",
+            "key": "  {#92}  {#36}Kernel",
+            "format": "{#36}{2}"
+        },
+        {
+            "type": "shell",
+            "key": "  {#92}  {#36}Shell",
+            "format": "{#36}{6} {4}"
+        },
+
+        {
+            "type": "custom",
+            "format": "{#36}└────────────────────────────────────────────────────────────────┘"
+        },
+        {
+            "type": "custom",
+            "format": "{#36}┌─────────────────────────── {#92}Desktop{#36} ────────────────────────────┐"
+        }, 
+        {
+            "type": "de",
+            "key": "  {#92}  {#36}DE",
+            "format": "{#36}{2} {3}"
+        },
+        {
+            "type": "wm",
+            "key": "  {#92}󱂬  {#36}WM",
+            "format": "{#36}{2} ({3})"
+        },
+        {
+            "type": "wmtheme",
+            "key": "  {#92}󰉼  {#36}Theme",
+            "format": "{#36}{1}"
+        },
+        {
+            "type": "icons",
+            "key": "  {#92}󰀻  {#36}Icons",
+            "format": "{#36}{1}"
+        },
+        {
+            "type": "display",
+            "key": "  {#92}󰍹  {#36}Display",
+            "format": "{#36}{6} ({1}x{2} @ {3}Hz)"
+        },
+        {
+            "type": "custom",
+            "format": "{#36}└────────────────────────────────────────────────────────────────┘"
+        },      
+        {
+            "type": "custom",
+            "format": "{#36}┌─────────────────────────── {#92}Hardware{#36} ───────────────────────────┐"
+        },
+        {
+            "type": "board",
+            "key": "  {#92}  {#36}Motherboard",
+            // had to add ASUS manually for my motherboard
+            "format": "{#36}ASUS {1}"
+        },
+        {
+            "type": "cpu",
+            "key": "  {#92}  {#36}Processor",
+            "format": "{#36}{1}"
+        },
+        {
+            "type": "gpu",
+            "key": "  {#92}󰢮  {#36}GPU",
+            "hideType": "integrated",
+            "format": "{#36}{2}"
+        },
+        {
+            "type": "memory",
+            "key": "  {#92}󰘚  {#36}Memory",
+            "format": "{#36}{1} / {2} ({3})"
+        },
+        {
+            "type": "custom",
+            "format": "{#36}└────────────────────────────────────────────────────────────────┘"
+        },
+        {
+            "type": "custom",
+            "format": "{#36}┌─────────────────────────── {#92}Storage{#36} ────────────────────────────┐"
+        },
+        {
+            "type": "disk",
+            "key": "  {#92}󰋊  {#36}/",
+            "folders": ["/"],
+            "format": "{#36}{1} / {2} {#36}({3}) {#36}{9}"
+        },
+        {
+            "type": "disk",
+            "key": "  {#92}󰋊  {#36}/mnt/wd-nvme",
+            "folders": ["/mnt/wd-nvme"],
+            "format": "{#36}{1} / {2} {#36}({3}) {#36}{9}"
+        },
+        {
+            "type": "disk",
+            "key": "  {#92}󰋊  drive 3",
+            "folders": ["/mnt/ct1000"],
+            "format": "{#36}{1} / {2} {#36}({3}) {#36}{9}"
+        },     
+        {
+            "type": "custom",
+            "format": "{#36}└────────────────────────────────────────────────────────────────┘"
+        },
+        {
+            "type": "custom",
+            "format": "{#36}┌──────────────────────────── {#92}Status{#36} ────────────────────────────┐"
+        },
+        {
+            "type": "uptime",
+            "key": "  {#92}  {#36}Uptime",
+            "format": "{#36}{1} days, {2} hours, {3} mins"
+        },
+        {
+            "type": "command",
+            "key": "  {#92}󰩟  {#36}Local IP",
+            "text": "read _ _ _ _ _ _ ip _ <<< $(ip route get 1.1.1.1); echo -e \"\\u001b[36m$ip\""
+        },
+        {
+            "type": "custom",
+            "format": "{#36}└────────────────────────────────────────────────────────────────┘"
+        }
+    ]
+}
+
