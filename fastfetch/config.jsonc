@@ -33,12 +33,12 @@
         },
         {
             "type": "kernel",
-            "key": "  {#92}  {#36}Kernel",
+            "key": "  {#92}  {#36}KERNEL",
             "format": "{#36}{2}"
         },
         {
             "type": "shell",
-            "key": "  {#92}  {#36}Shell",
+            "key": "  {#92}  {#36}SHELL",
             "format": "{#36}{6} {4}"
         },
 
@@ -62,17 +62,17 @@
         },
         {
             "type": "wmtheme",
-            "key": "  {#92}󰉼  {#36}Theme",
+            "key": "  {#92}󰉼  {#36}THEME",
             "format": "{#36}{1}"
         },
         {
             "type": "icons",
-            "key": "  {#92}󰀻  {#36}Icons",
+            "key": "  {#92}󰀻  {#36}ICONS",
             "format": "{#36}{1}"
         },
         {
             "type": "display",
-            "key": "  {#92}󰍹  {#36}Display",
+            "key": "  {#92}󰍹  {#36}DISPLAY",
             "format": "{#36}{6} ({1}x{2} @ {3}Hz)"
         },
         {
@@ -85,13 +85,13 @@
         },
         {
             "type": "board",
-            "key": "  {#92}  {#36}Motherboard",
+            "key": "  {#92}  {#36}MOBO",
             // had to add ASUS manually for my motherboard
             "format": "{#36}ASUS {1}"
         },
         {
             "type": "cpu",
-            "key": "  {#92}  {#36}Processor",
+            "key": "  {#92}  {#36}CPU",
             "format": "{#36}{1}"
         },
         {
@@ -102,7 +102,12 @@
         },
         {
             "type": "memory",
-            "key": "  {#92}󰘚  {#36}Memory",
+            "key": "  {#92}󰘚  {#36}RAM",
+            "format": "{#36}{1} / {2} ({3})"
+        },
+        {
+            "type": "swap",
+            "key": "  {#92}󰘚  {#36}SWAP",
             "format": "{#36}{1} / {2} ({3})"
         },
         {
@@ -127,7 +132,7 @@
         },
         {
             "type": "disk",
-            "key": "  {#92}󰋊  drive 3",
+            "key": "  {#92}󰋊  {#36}/mnt/ct1000",
             "folders": ["/mnt/ct1000"],
             "format": "{#36}{1} / {2} {#36}({3}) {#36}{9}"
         },     
@@ -143,11 +148,6 @@
             "type": "uptime",
             "key": "  {#92}  {#36}Uptime",
             "format": "{#36}{1} days, {2} hours, {3} mins"
-        },
-        {
-            "type": "command",
-            "key": "  {#92}󰩟  {#36}Local IP",
-            "text": "read _ _ _ _ _ _ ip _ <<< $(ip route get 1.1.1.1); echo -e \"\\u001b[36m$ip\""
         },
         {
             "type": "custom",
