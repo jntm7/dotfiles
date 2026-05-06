@@ -1,0 +1,37 @@
+cat > /etc/systemd/system/xorg-display.service << 'EOF'
+[Unit]
+Description=X Display Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/Xorg :0
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+cat > /etc/systemd/system/sunshine-display.service << 'EOF'
+[Unit]
+Description=Sunshine Streaming Server
+After=xorg-display.service
+Requires=xorg-display.service
+
+[Service]
+Type=simple
+User=sunshine
+Environment=DISPLAY=:0
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+ExecStart=/usr/bin/sunshine
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
+systemctl enable --now xorg-display
+systemctl enable --now sunshine-display
+systemctl status xorg-display sunshine-display
