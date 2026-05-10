@@ -30,11 +30,12 @@ export CHROME_EXECUTABLE=/usr/bin/vivaldi
 # Aliases
 alias zshrc="nvim ~/.zshrc"
 alias github="cd Documents/GitHub"
+
 alias pomostudy="pomodoro 'study'"
 alias pomowork="pomodoro 'work'"
 alias pomobreak="pomodoro 'break'"
 
-# Pomodoro Timer
+# Pomodoro
 declare -A pomo_options
 pomo_options["study"]="30"
 pomo_options["work"]="45"
@@ -49,3 +50,18 @@ pomodoro () {
   fi
 }
 
+# llama.cpp
+export PATH="$HOME/llama.cpp/build/bin:$PATH"
+alias llama-qwen='llama-server \
+  -m ~/models/Qwen_Qwen3.6-27B-Q3_K_M.gguf \
+  -ngl 999 \
+  -c 65536 \
+  -b 512 \
+  --ubatch-size 128 \
+  --flash-attn on \
+  --cache-type-k q4_0 \
+  --cache-type-v q4_0 \
+  --host 0.0.0.0 \
+  --port 8080'
+
+export PATH="/usr/bin:$PATH"
