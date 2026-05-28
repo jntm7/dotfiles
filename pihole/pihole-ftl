@@ -1,0 +1,21 @@
+# this rotates all three Pi-hole logs weekly, keeps 4 weeks of compressed history
+# and automatically restarts FTL after rotation.
+# place in /etc/logrotate.d/pihole-ftl
+
+/var/log/pihole/pihole.log
+/var/log/pihole/FTL.log
+/var/log/pihole/webserver.log
+{
+    weekly
+    rotate 4
+    compress
+    delaycompress
+    missingok
+    notifempty
+    sharedscripts
+    postrotate
+        pihole restartdns
+    endscript
+}
+
+# test: logrotate --debug /etc/logrotate.d/pihole-ftl
