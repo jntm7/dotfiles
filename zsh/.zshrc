@@ -64,4 +64,10 @@ alias llama-qwen='llama-server \
   --host 0.0.0.0 \
   --port 8080'
 
+#ROCm
+export LD_LIBRARY_PATH=/opt/rocm/lib:$LD_LIBRARY_PATH
+
+#ComfyUI
+alias comfy='~/ComfyUI/launch.sh'
+
 export PATH="/usr/bin:$PATH"
